@@ -108,7 +108,7 @@ export const loginUser = async (req, res) => {
 		if (!comparePassword) {
 			return res.status(400).json({
 				success: false,
-				message: "Invalid password",
+				message: "Invalid credentials",
 			});
 		}
 

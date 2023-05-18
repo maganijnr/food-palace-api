@@ -18,6 +18,7 @@ model User {
   password String
   role     Role     @default(USER)
   meals    Meal[]
+  avatar   String   @default("https://icon-library.com/images/no-user-image-icon/no-user-image-icon-3.jpg")
 }
 
 model Meal {
@@ -27,6 +28,8 @@ model Meal {
   quantity      Int
   category      String
   preview_image String
+  description   String
+  price         Int
   images        String[]
   chef          User?    @relation(fields: [chefId], references: [id])
   chefId        String   @db.ObjectId
